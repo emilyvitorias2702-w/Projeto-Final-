@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Copa Store 2026</title>
+
+    <link rel="stylesheet"
+          href="assets/css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold"
+               href="#">
+
+                <i class="bi bi-trophy-fill"></i>
+
+                Copa Store 2026
+
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse"
+                 id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="menu1.html">
+
+                            História
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="menu2.html">
+
+                            Fale Conosco
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="menu3.html">
+
+                            Dicas
+
+                        </a>
+                         <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="cadastro.html">
+
+                            Cadastre 
+
+                        </a>
+
+                    </li>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- CARROSSEL -->
+
+<div id="carouselCopa"
+     class="carousel slide"
+     data-bs-ride="carousel">
+
+    <div class="carousel-indicators">
+
+        <button type="button"
+                data-bs-target="#carouselCopa"
+                data-bs-slide-to="0"
+                class="active">
+        </button>
+
+        <button type="button"
+                data-bs-target="#carouselCopa"
+                data-bs-slide-to="1">
+        </button>
+
+        <button type="button"
+                data-bs-target="#carouselCopa"
+                data-bs-slide-to="2">
+        </button>
+
+    </div>
+
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+
+            <img src="assets/img/Imagem do Pin de história.png"
+                 class="d-block w-100"
+                 alt="Brasil">
+
+            <div class="carousel-caption d-none d-md-block">
+
+                <h2>Brasil 2026</h2>
+
+                <p>Vista a paixão verde e amarela.</p>
+
+            </div>
+
+        </div>
+
+        <div class="carousel-item">
+
+            <img src="assets/img/portugal2.jpg"
+                 class="d-block w-100"
+                 alt="Portugal">
+
+            <div class="carousel-caption d-none d-md-block">
+
+                <h2>Portugal</h2>
+
+                <p>Os melhores produtos da seleção portuguesa.</p>
+
+            </div>
+
+        </div>
+
+        <div class="carousel-item">
+
+            <img src="assets/img/argentina2.png"
+                 class="d-block w-100"
+                 alt="Argentina">
+
+            <div class="carousel-caption d-none d-md-block">
+
+                <h2>Argentina Campeã</h2>
+
+                <p>Camisas e acessórios oficiais.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <button class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselCopa"
+            data-bs-slide="prev">
+
+        <span class="carousel-control-prev-icon"></span>
+
+    </button>
+
+    <button class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselCopa"
+            data-bs-slide="next">
+
+        <span class="carousel-control-next-icon"></span>
+
+    </button>
+
+</div>
+
+<section class="banner">
+
+    <div class="overlay">
+
+        <h1>
+            Produtos Oficiais Copa do Mundo 2026
+        </h1>
+
+        <p>
+            Camisas, acessórios e chuteiras das melhores seleções.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="container mt-5">
+
+    <div class="text-center mb-4">
+
+        <input type="text"
+               id="pesquisa"
+               class="form-control pesquisa"
+               placeholder="Pesquisar produto..."
+               onkeyup="pesquisarProduto()">
+
+    </div>
+
+    <div class="text-center mb-5">
+
+        <button class="btn btn-success m-2"
+                onclick="filtrarPais('Brasil')">
+
+            Brasil
+
+        </button>
+
+        <button class="btn btn-danger m-2"
+                onclick="filtrarPais('Portugal')">
+
+            Portugal
+
+        </button>
+
+        <button class="btn btn-primary m-2"
+                onclick="filtrarPais('Argentina')">
+
+            Argentina
+
+        </button>
+
+        <button class="btn btn-dark m-2"
+                onclick="mostrarProdutos(produtos)">
+
+            Todos
+
+        </button>
+
+    </div>
+
+    <div class="row"
+         id="produtos">
+
+    </div>
+
+</section>
+
+<section class="container mt-5 mb-5">
+
+    <div class="card p-4 shadow-lg border-0">
+
+        <h2 class="text-center mb-4">
+
+            <i class="bi bi-cart-fill"></i>
+
+            Carrinho de Compras
+
+        </h2>
+
+        <ul class="list-group mb-3"
+            id="lista-carrinho">
+
+        </ul>
+
+        <h4 class="text-center">
+
+            Total:
+            R$
+
+            <span id="total">
+
+                0.00
+
+            </span>
+
+        </h4>
+       <div id="paypal-button-container"></div>
+        <div id="mensagem-pagamento"
+             class="mt-4">
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer mt-5">
+
+    <div class="container">
+
+        <div class="row text-center text-md-start">
+
+            <!-- LOGO -->
+
+            <div class="col-md-4 mb-4">
+
+                <h3 class="fw-bold text-warning">
+
+                    <i class="bi bi-trophy-fill"></i>
+
+                    Copa Store 2026
+
+                </h3>
+
+                <p class="text-light">
+
+                    A melhor loja de produtos oficiais da Copa do Mundo 2026.
+                    Camisas, chuteiras e acessórios das maiores seleções.
+
+                </p>
+
+            </div>
+
+            <!-- LINKS -->
+
+            <div class="col-md-4 mb-4">
+
+                <h5 class="fw-bold text-warning">
+
+                    Links Rápidos
+
+                </h5>
+
+                <ul class="list-unstyled">
+
+                    <li>
+                        <a href="index.html" class="footer-link">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="menu1.html" class="footer-link">
+                            História
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="menu2.html" class="footer-link">
+                            Fale Conosco
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="menu3.html" class="footer-link">
+                            Dicas
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- CONTATO -->
+
+            <div class="col-md-4 mb-4">
+
+                <h5 class="fw-bold text-warning">
+
+                    Contato
+
+                </h5>
+
+                <p class="text-light">
+
+                    <i class="bi bi-telephone-fill"></i>
+
+                    (31) 97576-5323
+
+                </p>
+
+                <p class="text-light">
+
+                    <i class="bi bi-instagram"></i>
+
+                    @Emilly.sillva
+
+                </p>
+
+                <div class="redes mt-3">
+
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="bg-light">
+
+        <div class="text-center pb-3">
+
+            <p class="text-light mb-0">
+
+                © 2026 Copa Store 2026 - Todos os direitos reservados
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+    
+
+<script src="https://www.paypal.com/sdk/js?client-id=AYO1PRe3cwDcf0a9NE8tJzX39Cqjqn2PJkKXgVYtjcyoJC86SCkgAVrGD2ohL16pa7qJm-NRtFnwhHkQ&currency=BRL"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
